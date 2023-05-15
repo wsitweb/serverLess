@@ -23,6 +23,3 @@ function switchClassHeader(position){
         switchScroll--;
     }
 }
-
-
-console.log('Test text')
