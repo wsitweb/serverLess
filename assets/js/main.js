@@ -24,3 +24,5 @@ function switchClassHeader(position){
     }
 }
 
+
+console.log('Test text')
