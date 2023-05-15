@@ -14,7 +14,6 @@ const DOMelementHeader = document.querySelector('header');
 let switchScroll = 0;
 document.addEventListener('scroll', ()=>{switchClassHeader(100)});
 function switchClassHeader(position){
-    console.log(position)
     if(Math.round(window.scrollY) > position){
         DOMelementHeader.classList.add('active')
         switchScroll++;
