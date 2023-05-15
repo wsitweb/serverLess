@@ -1,0 +1,95 @@
+*, *::before, *::after{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+li{
+    list-style: none;
+}
+h1, h2, h3, h4, h5, h6{
+    font-family: 'Soleil';
+    color: white;
+}
+a{
+    text-decoration: none;
+    color: #fff;
+}
+.peach-color{
+    background-color: var(--default-color);
+    color: #fff;
+}
+.link{
+    display: block;
+    width: fit-content;
+    padding: 16px 20px !important;
+    a{
+        display: block;
+        min-width: 136px;
+        text-align: center;
+    }
+}
+html{
+    height: fit-content;
+}
+body{
+    background-color: #fff;
+    height: 100%;
+}
+.main{
+    height: 100%;
+    background: linear-gradient(160deg,rgba(0, 0, 0, 1) 50%,#70221f) no-repeat;
+    background-size: 100% calc(100vh + 673px);
+}
+.figure{
+    border-bottom: 199px solid white;
+    border-right: 98.9vw solid transparent;
+}
+.figure.two{
+    margin-top: 170px;
+    border-color: var(--default-color) transparent;
+    scale: -1 1;
+}
+.red{
+    background-color: red;
+    color:red;
+}
+.yellow{
+    background-color: yellow;
+    color: yellow;
+}
+.green{
+    background-color: green;
+    color: green;
+}
+.orange{
+    background-color: #FBB03B;
+    color: #FBB03B;
+}
+.lime{
+    background-color: #8CC640;
+    color: #8CC640;
+}
+.annimation-bg{
+    width: 586px;
+    height: 720px;
+    background: url(../img/svg/element-two.svg) no-repeat;
+    background-position: left bottom;
+}
+.button{
+    text-align: center;
+    background-color: var(--default-color);
+    line-height: 50px;
+    font-family: Serverless;
+    font-size: 20px;
+    font-weight: 400;
+    max-width: 280px;
+}
+@media (max-height: 560px){
+    .main{
+        background-size: 100% calc(560px + 673px);
+    }
+    .annimation-bg{
+        background-size: cover cover;
+        max-height: 100vh;
+    }
+}
