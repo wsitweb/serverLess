@@ -15,10 +15,15 @@ let switchScroll = 0;
 document.addEventListener('scroll', ()=>{switchClassHeader(100)});
 function switchClassHeader(position){
     if(Math.round(window.scrollY) > position){
-        DOMelementHeader.classList.add('active')
+        DOMelementHeader.classList.add('hover')
         switchScroll++;
     }else if(Math.round(window.scrollY) < position || switchScroll){
-        DOMelementHeader.classList.remove('active')
+        DOMelementHeader.classList.remove('hover')
         switchScroll--;
     }
 }
+
+const DOMelementButton = document.querySelector('.header__button');
+DOMelementButton.addEventListener('click', () => {
+    DOMelementHeader.classList.toggle('active')
+})

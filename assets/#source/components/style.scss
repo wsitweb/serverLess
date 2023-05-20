@@ -16,8 +16,44 @@
     color: #fff;
     font-family: 'Soleil';
     z-index: 1;
+    @media(max-width: 820px){
+        padding: 10px;
+    }
+    &__button{
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        border: none;
+        width: 19px;
+        height: 2px;
+        z-index: 1500;
+        padding: 20px;
+        cursor: pointer;
+        display: none;
+        transform: translateY(-10%);
+        @media(max-width: 820px){
+            display: block;
+        }
+        &::before{
+            margin: -6px 0 0 0;
+        }
+        &::after{
+            margin: 6px 0 0 0;
+        }
+        &::before, &::after{
+            content: '';
+            transition: 0.3s all;
+            background-color: #fff;
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 19px;
+            height: 2px;
+        }
+    }
     &__wrap{
         display: flex;
+        flex-wrap: wrap;
         justify-content: space-between;
         flex-direction: row;
     }
@@ -27,8 +63,10 @@
         font-size: 16px;
     }
     &__nav{
+        transition: all 0.5s ease-in-out; 
         .nav__list{
             display: flex;
+            flex-wrap: wrap;
             flex-direction: row;
             align-items: center;
         }
@@ -39,14 +77,49 @@
                 display: none;
             }
         }
+        @media(max-width: 820px){
+            transform: translate(-100%, 0);
+            position: absolute;
+            background-color: #5b5b5b9e;
+            backdrop-filter: blur(5px);
+            inset: 0;
+            height: 100vh;
+            width: 100vw;
+            .nav__list{
+                flex-direction: column;
+                justify-content: center;
+                gap: 50px;
+                align-items: center;
+                height: 100%;
+            }
+        }
+    }
+    &.hover{
+        background-color: #000;
     }
     &.active{
-        background-color: #161616;
+        .header__nav{
+            transform: translate(0, 0) !important;
+        }
+        .header__button{
+            &::before{
+                transform: rotate(45deg);
+            }
+            &::after{
+                transform: rotate(-45deg);
+            }
+            &::after, &::before{
+                margin: 0;
+                margin-left: -10px;
+            }
+        }
     }
 }
 .preview{
     display: flex;
-    align-items: center;
+    flex-wrap: wrap;
+    padding-top: 250px;
+    // align-items: center;
     justify-content: space-between;
     color: #fff;
     height: 100vh;
@@ -55,8 +128,9 @@
         display: flex;
         flex-direction: column;
         flex: 0 1 auto;
+        max-width: 600px;
         &:last-child{
-            margin-top: 50px;
+            margin-top: -100px;
             align-items: center;
             justify-content: center;
         }
@@ -185,6 +259,15 @@
             }
         }
     }
+    @media(max-width:1216px){
+        justify-content: center;
+        height: fit-content;
+        &__item{
+            &:last-child{
+                margin-top: 150px;
+            }
+        }
+    }
 }
 .services{
     text-align: center;
@@ -202,6 +285,8 @@
     }
     &__lincks{
         display: flex;
+        flex-wrap: wrap;
+        gap: 30px;
         justify-content: space-around;
     }
     &__linck{
@@ -216,11 +301,15 @@
     &__section{
         display: flex;
         flex-direction: row;
+        flex-wrap: wrap;
         justify-content: space-between;
         gap: 10px;
         margin: 0 0 200px 0;
         &:last-child{
             margin: 0;
+        }
+        @media(max-width: 1100px){
+            justify-content: center;
         }
     }
     &__section:last-child{
@@ -330,6 +419,9 @@
     background-position: left top;
     padding: 200px 0;
     margin-bottom: 100px;
+    @media(max-width: 1050px){
+
+    }
     &__wrap{
         display: flex;
         justify-content: flex-end;
@@ -364,7 +456,6 @@
             color: #000000;
             text-align: center;
             margin-bottom: 71px;
-
             font-family: SoleilBk;
             font-size: 24px;
             font-weight: 400;
@@ -372,6 +463,8 @@
         }
         &__list{
             display: flex;
+            flex-wrap: wrap;
+            gap: 50px;
             flex-direction: row;
             justify-content: space-between;
         }
@@ -463,14 +556,21 @@
     }
     &__nav{
         display: flex;
+        flex-wrap: wrap;
+        gap: 30px;
         width: 100%;
         justify-content: space-between;
         margin-bottom: 52px;
     }
     &__wrap{
         display: flex;
+        flex-wrap: wrap;
         flex-direction: row;
         gap: 80px;
+        @media(max-width: 1020px){
+            align-items: center;
+            flex-direction: column-reverse;
+        }
     }
     &__list-title{
         color: #fff;
